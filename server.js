@@ -10,7 +10,7 @@ const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
-const server = http.createServer(app);
+
 const PORT = process.env.PORT || 3001;
 
 // Set up Handlebars.js engine with custom helpers
@@ -41,6 +41,6 @@ app.use(routes);
 
 
 sequelize.sync({ force: false }).then(() => {
-    server.listen(PORT, () => console.log('3001 Now listening'));
+    app.listen(PORT, () => console.log('3001 Now listening'));
 });
  
