@@ -1,0 +1,16 @@
+<!-- Loop over each object in the projects array -->
+{{#each projects as |tech| }}
+
+<div class="card">
+  <div class="card-header">
+    {{{get_emoji}}} 
+    <a href="/tech/{{tech.id}}">{{tech.name}}</a>
+  </div>
+  <div class="card-body">
+    <p class="card-title">Created by {{tech.user.name}} on {{format_date tech.date_created}}</p>
+    <p class="card-text">{{tech.description}}</p>
+  </div>
+</div>
+
+
+{{/each}}
